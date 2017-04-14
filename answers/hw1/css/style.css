@@ -47,19 +47,18 @@ body {
 }
 
 .user_title {
-  margin: 5px 0 0 80px;
+  margin: 5px 5px 0 80px;
   color: white;
   font-size: 25px;
 }
 
 .user_name {
-  margin: 10px 0 0 80px;
+  margin: 10px 5px 0 80px;
   color: white;
   font-size: 15px;
 }
 
 #special {
-  width: 30%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
