@@ -29,31 +29,34 @@ body {
   width: auto;
   height: 70px;
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: warp;
+  justify-content: flex-start;
+  align-items:center ;
 }
 
 .user_img {
-  position: absolute;
-  margin: 10px;
   width: 50px;
   height: 50px;
   background: url("https://static-cdn.jtvnw.net/jtv-static/404_preview-300x300.png") no-repeat;
   background-size: 50px 50px;
   border-radius: 50%;
+  margin: 0 10px;
 }
 
 .user_info {
+  width: 230px;
   display: flex;
   flex-direction: column;
 }
 
 .user_title {
-  margin: 5px 5px 0 80px;
   color: white;
   font-size: 25px;
 }
 
 .user_name {
-  margin: 10px 5px 0 80px;
   color: white;
   font-size: 15px;
 }
