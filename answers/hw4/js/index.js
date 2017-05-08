@@ -15,28 +15,16 @@ $(function() {
           "background-size",
           "100% 100%"
         );
-        $(
-          "div#" +
-            c +
-            ".channel" +
-            ">" +
-            "div.user" +
-            ">" +
-            "div.user_info" +
-            ">" +
-            "div.user_title"
-        ).append(data.streams[c].channel.status);
-        $(
-          "div#" +
-            c +
-            ".channel" +
-            ">" +
-            "div.user" +
-            ">" +
-            "div.user_info" +
-            ">" +
-            "div.user_name"
-        ).append(data.streams[c].channel.name);
+        $("div#" + c + ".channel>div.user>div.user_img").css(
+          "background-image",
+          "url(" + data.streams[c].channel.logo + ")"
+        );
+        $("div#" + c + ".channel>div.user>div.user_info>div.user_title").append(
+          data.streams[c].channel.status
+        );
+        $("div#" + c + ".channel>div.user>div.user_info>div.user_name").append(
+          data.streams[c].channel.name
+        );
       } // 依序印出所有頻道資訊
     },
     error: function() {
