@@ -99,14 +99,5 @@ window.addEventListener("scroll", function(event) {
 });
 
 function url(client_ID, limit, offset) {
-  return (
-    "https://api.twitch.tv/kraken/streams/?client_id=" +
-    client_ID +
-    "&game=" +
-    game +
-    "&limit=" +
-    limit +
-    "&offset=" +
-    offset
-  );
+  return `https://api.twitch.tv/kraken/streams/?client_id=${client_ID}&game=${game}&limit=${limit}&offset=${offset}`;
 }
