@@ -1,40 +1,35 @@
-function renderChannel(length) {
-  for (var c = 0; c < length; c++) {
-    buildChannel(c);
-  }
-}
+var game = "League%20of%20Legends";
+var client_ID = "y7kmxph29brxczhdk9dn9ardapegmd";
+var limit = 20;
+var offset = 0;
 
-function buildChannel(data) {
+renderChannel(limit);
+var request = xhr(url(client_ID, limit, offset), offset);
+
+function renderChannel(limit) {
   var flex_container = document.querySelector(".flex-container");
-  var channel = document.createElement("div");
-  var img = document.createElement("div");
-  var channel_img = document.createElement("img");
-  var defaultChannel_img = document.createElement("div");
-  var user = document.createElement("div");
-  var user_img = document.createElement("img");
-  var defaultUser_img = document.createElement("div");
-  var user_info = document.createElement("div");
-  var user_title = document.createElement("div");
-  var user_name = document.createElement("div");
-  block(flex_container, channel, "channel");
-  block(channel, img, "img");
-  block(img, channel_img, "channel_img");
-  block(img, defaultChannel_img, "defaultChannel_img");
-  block(channel, user, "user");
-  block(user, user_img, "user_img");
-  block(user, defaultUser_img, "defaultUser_img");
-  block(user, user_info, "user_info");
-  block(user_info, user_title, "user_title", "頻道名稱");
-  block(user_info, user_name, "user_name", "實況主名字");
+  for (var c = 0; c < limit; c++) {
+    flex_container.innerHTML += getChannel();
+  }
+}
+function getChannel() {
+  return `
+  <div class="channel">
+    <div class="img">
+      <div class="defaultChannel_img"></div>  
+      <img class="channel_img">
+    </div>
+    <div class="user">
+      <div class="defaultUser_img"></div>
+      <img class="user_img">
+      <div class="user_info">
+        <div class="user_title"></div>
+        <div class="user_name"></div>
+      </div>
+    </div>
+  </div>`;
 }
 
-function block(_parent, _children, _children_name, _children_text) {
-  _children.className += _children_name;
-  if (_children_text !== undefined) {
-    _children.innerHTML = _children_text;
-  }
-  _parent.appendChild(_children);
-}
 function xhr(url, offset) {
   var httpRequest;
   //build XMLHttpRequest
@@ -67,7 +62,6 @@ function xhr(url, offset) {
 }
 function dataIntoModel(data, offset) {
   var channel_img = document.querySelectorAll(".channel_img");
-  console.log();
   var channel_logo = document.querySelectorAll(".user_img");
   var channel_title = document.querySelectorAll(".user_title");
   var channel_name = document.querySelectorAll(".user_name");
@@ -100,32 +94,19 @@ window.addEventListener("scroll", function(event) {
   ) {
     renderChannel(limit);
     offset += limit;
-    _url =
-      "https://api.twitch.tv/kraken/streams/?client_id=" +
-      client_ID +
-      "&game=" +
-      game +
-      "&limit=" +
-      limit +
-      "&offset=" +
-      offset;
-    xhr(_url, offset);
+    xhr(url(client_ID, limit, offset), offset);
   }
 });
 
-var game = "League%20of%20Legends";
-var client_ID = "y7kmxph29brxczhdk9dn9ardapegmd";
-var limit = 10;
-var offset = 0;
-var _url =
-  "https://api.twitch.tv/kraken/streams/?client_id=" +
-  client_ID +
-  "&game=" +
-  game +
-  "&limit=" +
-  limit +
-  "&offset=" +
-  offset;
-
-var build = renderChannel(limit);
-var request = xhr(_url, offset);
+function url(client_ID, limit, offset) {
+  return (
+    "https://api.twitch.tv/kraken/streams/?client_id=" +
+    client_ID +
+    "&game=" +
+    game +
+    "&limit=" +
+    limit +
+    "&offset=" +
+    offset
+  );
+}
