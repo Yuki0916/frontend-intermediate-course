@@ -1,1 +1,3 @@
 examples/
+answers/*/dist/
+answers/*/node_modules/
