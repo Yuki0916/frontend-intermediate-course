@@ -49,7 +49,7 @@ div #b2:hover {
   height: 180px;
   width: 100%;
 }
-.channel_img {
+.channelImg {
   position: relative;
   width: 100%;
   height: 100%;
@@ -57,7 +57,7 @@ div #b2:hover {
   z-index: 1;
   transition: opacity 0.5s ease-in;
 }
-.defaultChannel_img {
+.defaultchannelImg {
   position: absolute;
   top: 0;
   left: 0;
