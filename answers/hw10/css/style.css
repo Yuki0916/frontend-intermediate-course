@@ -1,0 +1,116 @@
+body {
+  background: url("http://cdn.leagueoflegends.com/lolkit/1.1.6/resources/images/bg-default.jpg") no-repeat fixed;
+}
+.switch {
+  text-align: center;
+  font-weight: bold;
+  font-size: 150%;
+  margin-bottom: 30px;
+  color: #fff;
+}
+.switch h1 {
+  text-align: center;
+  font-size: 200%;
+  font-weight: bold;
+  margin: 30px 0;
+  color: #fff;
+}
+.button {
+  display: inline;
+}
+div #b1:hover,
+div #b2:hover {
+  color: #00008b;
+}
+.flex-container {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.channel {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  margin: 16px;
+  transition: box-shadow 0.2s ease, filter 0.2s ease;
+}
+.channel:hover {
+  filter: brightness(1.5);
+  box-shadow: 5px 5px 15px #000;
+}
+.Channel_null {
+  width: 300px;
+}
+.img {
+  position: relative;
+  height: 180px;
+  width: 100%;
+}
+.channel_img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.5s ease-in;
+}
+.defaultChannel_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://static-cdn.jtvnw.net/ttv-static/404_preview-320x180.jpg") center no-repeat;
+}
+.user {
+  position: relative;
+  height: 70px;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.user_img {
+  position: relative;
+  margin: 0 10px;
+  width: 50px;
+  height: 50px;
+  background-size: 100% 100%;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.5s ease-in;
+}
+.defaultUser_img {
+  position: absolute;
+  margin: 0 10px;
+  width: 50px;
+  height: 50px;
+  background: url("https://static-cdn.jtvnw.net/jtv-static/404_preview-300x300.png");
+  background-size: 100% 100%;
+  border-radius: 50%;
+}
+.user_info {
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+}
+.user_title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 22px;
+}
+.user_name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 14px;
+}
